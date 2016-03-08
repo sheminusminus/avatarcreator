@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg" version="XHTML+RDFa 1.0" xml:lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta author="Emily Elizabeth Kolar"/>
+    <title>avatar builder</title>
+    <link rel="stylesheet" href="css/vendor/normalize.css"/>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+	
+	<div id="app" class="appContainer">
+		
+		<!-- app -->
+		
+	</div>
+<script>
+	var workEvents = [];
+	var otherEvents = [];
+	function closeFrame() {
+		var connectFrame = document.querySelector('.connectFrame');
+		connectFrame.classList.add('connected');
+		connectFrame.classList.remove('show');
+		var connectBtn = document.querySelector('#connect-calendar');
+		connectBtn.value = 'connected';
+		connectBtn.classList.add('connected');
+	}	
+</script>
+<script src="js/bodyParts.js"></script>
+<script src="bundle.js"></script>
+</body>
+</html>

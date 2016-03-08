@@ -1,0 +1,186 @@
+@font-face {
+  font-family: Avenir;
+  src: url("../font/Avenir.ttc"); }
+
+body {
+  background-color: #ebebeb;
+  width: 100%;
+  max-width: 100%;
+  height: 100vh;
+  font-family: Avenir, 'Helvetica Neue', Helvetica, sans-serif; }
+
+.appContainer {
+  width: 100%;
+  max-width: 100%;
+  height: 100vh;
+  overflow: hidden; }
+
+.uiContainer {
+  background-color: #646464;
+  height: 80vh;
+  width: 94%;
+  margin: 15vh auto 5vh;
+  box-shadow: 3px 3px 5px #3c3c3c;
+  border-radius: 4px;
+  display: flex; }
+  .uiContainer .categoryBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 40%;
+    height: 100%; }
+  .uiContainer .categoryControls {
+    width: 80%;
+    height: 60px;
+    background-color: #ebebeb;
+    border-right: 2px solid #2a8ec8;
+    border-left: 2px solid #2a8ec8;
+    border-radius: 5px;
+    margin: 0 auto;
+    color: #373737;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 2px 2px 3px #1e1e1e;
+    padding-right: 10px;
+    padding-left: 10px; }
+    .uiContainer .categoryControls:hover {
+      background-color: white; }
+    .uiContainer .categoryControls.open {
+      height: 270px; }
+    .uiContainer .categoryControls .categoryTitle {
+      text-transform: uppercase;
+      border-bottom: 1px solid #2a8ec8; }
+    .uiContainer .categoryControls .categoryOptions {
+      display: none;
+      width: 100%;
+      height: 210px;
+      padding-top: 10px; }
+      .uiContainer .categoryControls .categoryOptions.active {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around; }
+      .uiContainer .categoryControls .categoryOptions .option {
+        width: 100%;
+        height: 30px;
+        text-align: center;
+        display: flex; }
+        .uiContainer .categoryControls .categoryOptions .option .optionTitle {
+          width: 80%;
+          color: #373737;
+          text-transform: uppercase;
+          display: flex;
+          flex-direction: column;
+          justify-content: center; }
+        .uiContainer .categoryControls .categoryOptions .option .arrowBox {
+          width: 10%;
+          border-radius: 5px;
+          background-size: 25px 25px;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-image: url("../img/arrowL.png"); }
+          .uiContainer .categoryControls .categoryOptions .option .arrowBox.right {
+            background-image: url("../img/arrowR.png"); }
+          .uiContainer .categoryControls .categoryOptions .option .arrowBox:hover {
+            background-color: rgba(42, 142, 200, 0.3); }
+  .uiContainer .avatarBox {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    padding-top: 0;
+    justify-content: center; }
+    .uiContainer .avatarBox .svgContainer {
+      transform: scale(0.75);
+      margin-top: -40px; }
+    .uiContainer .avatarBox img {
+      max-height: 100%; }
+
+.appHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #2a8ec8;
+  width: 100%;
+  max-width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-around;
+  box-shadow: 0px 2px 3px #3c3c3c; }
+  .appHeader .logoTitle {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+  .appHeader .menuBtnArea {
+    width: 10%;
+    padding: 15px; }
+  .appHeader .menuBtn {
+    height: 30px;
+    width: 30px;
+    border: none;
+    border-radius: 2px;
+    background-color: #646464; }
+  .appHeader .h2 {
+    color: #ebebeb;
+    font-weight: 500;
+    height: 100%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10px; }
+  .appHeader .headerOptionGroup {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around; }
+    .appHeader .headerOptionGroup .headerOption {
+      width: calc(100% / 5.5);
+      display: flex;
+      flex-direction: column;
+      justify-content: center; }
+  .appHeader .headerBtn {
+    height: 40px;
+    background-color: #646464;
+    border: none;
+    border-radius: 2px;
+    color: #ebebeb;
+    font-weight: 500; }
+    .appHeader .headerBtn:hover {
+      background-color: #646464; }
+    .appHeader .headerBtn.connected {
+      color: #00b16a; }
+
+.pushToggle {
+  width: 90px;
+  height: 40px;
+  background-color: #646464;
+  border: 2px solid #646464;
+  border-radius: 2px;
+  outline: 2px solid #444;
+  display: flex;
+  justify-content: center; }
+  .pushToggle .pad {
+    width: 46%;
+    height: 90%;
+    border: 2px solid #333;
+    background-color: #444;
+    cursor: pointer; }
+    .pushToggle .pad.active {
+      background-color: #2a8ec8; }
+
+.connectFrame {
+  width: 400px;
+  height: 300px;
+  position: fixed;
+  left: calc(50% - 150px);
+  top: 50px;
+  background-color: white;
+  border-radius: 3px;
+  overflow: scroll;
+  display: none; }
+  .connectFrame.show {
+    display: block; }

@@ -1,2 +1,2 @@
 # avatarcreator
-create your avatar (uses ReactJS and SVG)
+create your avatar (uses reactjs and svg paths)

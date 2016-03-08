@@ -1,0 +1,239 @@
+$bodyBg: rgb(235,235,235);
+$controlsHilite: rgb(255,255,255);
+$uiBg: rgb(100,100,100);
+$shadow: rgb(30,30,30);
+$lightShadow: rgb(60,60,60);
+$headerBg: rgb(42,142,200);
+$headerBgAlpha: rgba(42,142,200,0.3);
+$headerBgAlHilite: rgba(42,142,200,0.6);
+$lightText: rgb(190,190,190);
+$darkText: rgb(55,55,55);
+$uiHighlight: rgb(80,80,80);
+$uiHover: rgb(100,100,100);
+$medText: rgb(150,150,150);
+
+@mixin fullSize() {
+	width: 100%;
+	max-width: 100%;
+	height: 100vh;
+}
+
+@font-face {
+	font-family: Avenir;
+	src: url('../font/Avenir.ttc');
+}
+
+body {
+	background-color: $bodyBg;
+	@include fullSize;
+	font-family: Avenir, 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+.appContainer {
+	@include fullSize;
+	overflow: hidden;
+}
+
+.uiContainer {
+	background-color: $uiBg;
+	height: 80vh;
+	width: 94%;
+	margin: 15vh auto 5vh;
+	box-shadow: 3px 3px 5px $lightShadow;
+	border-radius: 4px;
+	display: flex;
+	.categoryBox {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		width: 40%;
+		height: 100%;
+	}
+	.categoryControls {
+		width: 80%;
+		height: 60px;
+		background-color: $bodyBg;
+		border-right: 2px solid $headerBg;
+		border-left: 2px solid $headerBg;
+		border-radius: 5px;
+		margin: 0 auto;
+		color: $darkText;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		cursor: pointer;
+		box-shadow: 2px 2px 3px $shadow;
+		padding-right: 10px;
+		padding-left: 10px;
+		&:hover {
+			background-color: $controlsHilite;
+		}
+		&.open {
+			height: 270px;
+		
+		}
+		.categoryTitle {
+			text-transform: uppercase;
+			border-bottom: 1px solid $headerBg;
+		}
+		.categoryOptions {
+			display: none;
+			width: 100%;
+			height: 210px;
+			padding-top: 10px;
+			&.active {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;
+			}
+			.option {
+				width: 100%;
+				height: 30px;
+				text-align: center;
+				display: flex;
+				.optionTitle {
+					width: 80%;
+					color: $darkText;
+					text-transform: uppercase;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+				}
+				.arrowBox {
+					width: 10%;
+					border-radius: 5px;
+					background-size: 25px 25px;
+					background-position: center;
+					background-repeat: no-repeat;
+					background-image: url('../img/arrowL.png');
+					&.right {
+						background-image: url('../img/arrowR.png');
+					}
+					&:hover {
+						background-color: $headerBgAlpha;
+					}
+				}
+			}
+		}
+	}
+	
+	.avatarBox {
+		width: 60%;
+		height: 100%;
+		display: flex;
+		padding-top: 0;
+		justify-content: center;
+		.svgContainer {
+			transform: scale(0.75);
+			margin-top: -40px;
+		}
+		img {
+			max-height: 100%;
+		}
+	}
+}
+
+.appHeader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: $headerBg;
+	width: 100%;
+	max-width: 100%;
+	height: 70px;
+	display: flex;
+	justify-content: space-around;
+	box-shadow: 0px 2px 3px $lightShadow;
+	.logoTitle {
+		width: 40%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	.menuBtnArea {
+		width: 10%;
+		padding: 15px;
+	}
+	.menuBtn {
+		height: 30px;
+		width: 30px;
+		border: none;
+		border-radius: 2px;
+		background-color: $uiBg;
+	}
+	.h2 {
+		color: $bodyBg;
+		font-weight: 500;
+		height: 100%;
+		width: 90%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding-left: 10px;
+	}
+	.headerOptionGroup {
+		width: 60%;
+		height: 100%;
+		display: flex;
+		justify-content: space-around;
+		.headerOption {
+			width: calc(100% / 5.5);
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+	}
+	.headerBtn {
+		height: 40px;
+		background-color: $uiBg;
+		border: none;
+		border-radius: 2px;
+		color: $bodyBg;
+		font-weight: 500;
+		&:hover{
+			background-color: $uiHover;
+		}
+		&.connected {
+			color: rgb(0,177,106); 
+		}
+	}
+	
+}
+
+.pushToggle {
+	width: 90px;
+	height: 40px;
+	background-color: $uiBg;
+	border: 2px solid $uiHover;
+	border-radius: 2px;
+	outline: 2px solid #444;
+	display: flex;
+	justify-content: center;
+	.pad {
+		width: 46%;
+		height: 90%;
+		border: 2px solid #333;
+		background-color: #444;
+		cursor: pointer;
+		&.active {
+			background-color: $headerBg;
+		}
+	}
+}
+
+.connectFrame {
+	width: 400px;
+	height: 300px;
+	position: fixed;
+	left: calc(50% - 150px);
+	top: 50px;
+	background-color: white;
+	border-radius: 3px;
+	overflow: scroll;
+	display: none;
+	&.show {
+		display: block;	
+	}
+}
